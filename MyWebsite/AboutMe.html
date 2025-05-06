@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Based Abdul Rahim | Software Engineering Student</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      background: #f4f4f4;
+      color: #333;
+    }
+    .main {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+    }
+    .container {
+      padding: 20px;
+      max-width: 65%;
+      background: #fff;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar {
+      padding: 20px;
+      width: 35%;
+      background: #ecf0f1;
+      box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #2c3e50;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .contact, .links {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .links a {
+      margin: 0 10px;
+      color: #2980b9;
+      text-decoration: none;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    .qa-section {
+      margin-top: 40px;
+    }
+    .qa-section h3 {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <header>
+      <h1>Based Abdul Rahim</h1>
+      <p>Software Engineering Student at University of Ottawa</p>
+      <div class="contact">
+        <p>Ottawa, ON | (613) 879-0079 | BasedAbdulRahim@gmail.com</p>
+      </div>
+      <div class="links">
+        <a href="https://github.com/BasedAbdulRahim" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/abaseen-ahmadzai-60059b234/" target="_blank">LinkedIn</a>
+        <a href="BasedAbdulRahim_Resume.docx" download>Download Resume</a>
+      </div>
+    </header>
+
+    <div style="display: flex;">
+      <div class="container">
+        <h2>Education</h2>
+        <p><strong>University of Ottawa</strong> — BSc Software Engineering (2023–2027)</p>
+        <ul>
+          <li>Focused on OOP, data structures, databases, software design, and engineering ethics.</li>
+          <li>Courses: Algorithms, Linear Algebra, Discrete Math, Probability, Digital Systems, Physics, Chemistry.</li>
+        </ul>
+
+        <h2>Technical Skills</h2>
+        <ul>
+          <li><strong>Languages:</strong> Java, Python, JavaScript, HTML, CSS</li>
+          <li><strong>Tools:</strong> Git, VSCode, Eclipse, Blender, AutoCAD</li>
+          <li><strong>Concepts:</strong> OOP, Databases (SQL), Software Engineering, Technical Writing</li>
+        </ul>
+
+        <h2>Projects</h2>
+        <p><strong>AI Maze Pathfinding Visualizer (Java)</strong></p>
+        <ul>
+          <li>Implemented BFS/DFS algorithms with Java GUI for visual interaction.</li>
+        </ul>
+        <p><strong>Health & Nutrition Business Site (HTML/CSS/JS)</strong></p>
+        <ul>
+          <li>Responsive business website using HTML/CSS/JS with usability testing.</li>
+        </ul>
+
+        <h2>Experience</h2>
+        <p><strong>Walmart Canada — Stock Unloader Associate (2023–Present)</strong></p>
+        <ul>
+          <li>Efficiently managed inventory and logistics, unloading up to 2 trucks daily.</li>
+          <li>Collaborated with teammates and ensured excellent customer service.</li>
+        </ul>
+
+        <h2>Awards & Certifications</h2>
+        <ul>
+          <li>Dale Brown Technology Award (2022)</li>
+          <li>B2 French Language Certification (DELF)</li>
+          <li>Honor Roll Recipient</li>
+        </ul>
+      </div>
+
+      <div class="sidebar">
+        <canvas id="hoursChart" width="300" height="300"></canvas>
+        <script>
+          const ctx = document.getElementById('hoursChart');
+          new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: ['Coding (Java/Python)', 'Web Dev (HTML/CSS/JS)', 'Software Design & Testing', 'Math & Theory'],
+              datasets: [{
+                data: [250, 120, 80, 150],
+                backgroundColor: ['#3498db', '#1abc9c', '#f39c12', '#e74c3c'],
+                hoverOffset: 10
+              }]
+            },
+            options: {
+              plugins: {
+                legend: {
+                  position: 'bottom'
+                }
+              }
+            }
+          });
+        </script>
+
+        <div class="qa-section">
+          <h3>💬 Tell me about yourself</h3>
+          <p>I'm a passionate Software Engineering student at the University of Ottawa with hands-on experience in building web apps, designing algorithms, and collaborating on real-world engineering problems. I strive to write clean, effective code and continuously improve.</p>
+
+          <h3>❗ What is a weakness of yours?</h3>
+          <p>Sometimes I overcommit to perfecting technical details. I'm working on balancing detail orientation with project deadlines by improving prioritization and estimating effort better.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
