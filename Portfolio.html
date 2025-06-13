@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Based Abdul Rahim | Software Engineering Student</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      background: #f4f4f4;
+      color: #333;
+    }
+    .main { display: flex; flex-direction: column; width: 100%; }
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+    }
+    .container {
+      padding: 20px;
+      max-width: 65%;
+      background: #fff;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .sidebar {
+      padding: 20px;
+      width: 35%;
+      background: #ecf0f1;
+      box-shadow: inset 2px 0 5px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #2c3e50;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 10px; }
+    .contact, .links {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .links a {
+      margin: 0 10px;
+      color: #2980b9;
+      text-decoration: none;
+    }
+    .links a:hover { text-decoration: underline; }
+    .qa-section { margin-top: 40px; }
+    .qa-section h3 { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <header>
+      <h1>Based Abdul Rahim</h1>
+      <p>Ottawa, ON • (613) 879-0079 • BasedAbdulRahim@gmail.com</p>
+      <div class="links">
+        <a href="https://github.com/BasedAbdulRahim/Portfolio" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/abdulbased-abdul-rahim-5a7044293/" target="_blank">LinkedIn</a>
+        <a href="https://basedabdulrahim.github.io/SEG3125_Portfolio/" target="_blank">SEG3125 Portfolio</a>
+      </div>
+    </header>
+
+    <div style="display: flex;">
+      <div class="container">
+        <h2>Education</h2>
+        <p><strong>University of Ottawa — Bachelor of Software Engineering</strong><br>Sept 2023 – Dec 2027 (Expected) • Ottawa, ON</p>
+        <ul>
+          <li>Completed/Completing coursework in software design, digital systems, computer architecture, user interfaces, operating systems, and communication.</li>
+          <li>Studied key mathematics and science disciplines: calculus, linear algebra, discrete math, probability, physics, and chemistry.</li>
+        </ul>
+
+        <h2>Technical Skills</h2>
+        <ul>
+          <li><strong>Languages & Web:</strong> Java, Python, JavaScript, HTML, CSS</li>
+          <li><strong>Software & Tools:</strong> Git, VSCode, Eclipse, AutoCAD, Blender, MS Suite</li>
+          <li><strong>Systems & Design:</strong> Object-Oriented Programming, Software Design Patterns, UI/UX Principles, Operating Systems, Software Testing</li>
+          <li><strong>Engineering & Architecture:</strong> Digital Logic Design, Computer Architecture (memory hierarchy, CPU design), Embedded Systems Principles</li>
+          <li><strong>Math & Analysis:</strong> Discrete Structures, Calculus I & II, Linear Algebra, Probability & Statistics</li>
+          <li><strong>Communication:</strong> Technical Report Writing, Team Collaboration, Product Development Communication</li>
+          <li><strong>Languages:</strong> English, French, Farsi</li>
+        </ul>
+
+        <h2>Projects</h2>
+        <p><strong>Business Web Development</strong> — Sep 2023 - Dec 2023</p>
+        <ul>
+          <li>Designed a sophisticated Nutrition website to promote a health business in uOttawa</li>
+          <li>Created a professional Pitch to gather use cases & requirements from countless health staff and onsite entrepreneurs.</li>
+          <li>Applied usability and user tolerance concepts when implementing the front-end using HTML, CSS, and JavaScript</li>
+          <li>Performed multiple tests including regression, sanity, and ad-hoc</li>
+        </ul>
+        <p><strong>Pathfinding AI Final Project</strong> — June 2023</p>
+        <ul>
+          <li>Used advanced Java OOP-based design to create an elaborate AI capable of self-navigating through user-generated mazes.</li>
+          <li>Code implemented with Java graphical user interface libraries for the visual concepts</li>
+        </ul>
+
+        <h2>Experience</h2>
+        <p><strong>Walmart Canada — Stock Unloader Associate</strong><br>July 2023 – Present • Ottawa, ON</p>
+        <ul>
+          <li>Performed efficiently in a high-paced logistics environment to optimize truck delivery operations.</li>
+          <li>Collaborated closely with colleagues to achieve seamless task execution and project success.</li>
+          <li>Demonstrated exceptional organizational skills by managing and cataloging items of diverse sizes and functionalities.</li>
+          <li>Delivered superior customer service by offering expert guidance and instructions, ensuring high customer satisfaction.</li>
+        </ul>
+
+        <h2>Awards & Initiatives</h2>
+        <ul>
+          <li><strong>Founder, Dale Brown Technology Award</strong> — May 2022<br>Designed and established a recognition award symbolizing perseverance in technology. Personally created and delivered a commemorative plaque to honor student dedication.</li>
+          <li>B2 French Language Certification (DELF)</li>
+          <li>Honor Roll Recipient</li>
+        </ul>
+      </div>
+
+      <div class="sidebar">
+        <canvas id="hoursChart" width="300" height="300"></canvas>
+        <script>
+          const ctx = document.getElementById('hoursChart');
+          new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: ['Coding (Java/Python)', 'Web Dev (HTML/CSS/JS)', 'Software Design & Testing', 'Math & Theory'],
+              datasets: [{
+                data: [250, 120, 80, 150],
+                backgroundColor: ['#3498db', '#1abc9c', '#f39c12', '#e74c3c'],
+                hoverOffset: 10
+              }]
+            },
+            options: {
+              plugins: {
+                legend: {
+                  position: 'bottom'
+                }
+              }
+            }
+          });
+        </script>
+
+        <div class="qa-section">
+          <h3>💬 Tell me about yourself</h3>
+          <p>Hi, my name is Based Abdul Rahim, and I’m currently pursuing a Bachelor of Software Engineering at the University of Ottawa. I’ve completed core coursework in areas like data structures, operating systems, digital systems, and software design, which has given me a strong foundation in both theoretical computer science and practical software engineering.
+
+            I enjoy building and optimizing real-world applications—whether it’s a Java-based AI maze pathfinder or a responsive web platform built for a university health initiative. Through these projects, I’ve developed a passion for writing clean, maintainable code and applying design principles that enhance user experience.
+            
+            Outside of academics, I’ve worked in fast-paced environments like Walmart, where I strengthened my organizational and teamwork skills. I also initiated the Dale Brown Technology Award to recognize perseverance and commitment in tech—something I value deeply.
+            
+            Right now, I’m looking to grow further by contributing to meaningful software projects and learning from experienced engineers. I’m especially excited about opportunities that combine problem-solving, product design, and team collaboration.</p>
+
+          <h3>❗ What is a weakness of yours?</h3>
+          <p>I'm very detail-oriented, which sometimes slows my progress. I'm working on improving my time management and balancing precision with speed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
