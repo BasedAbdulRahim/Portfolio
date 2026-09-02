@@ -1,0 +1,406 @@
+/* ---------- Theme ---------- */
+:root {
+  --ink:#17201d;
+  --muted:#63706a;
+  --paper:#f5f2ea;
+  --card:#fffdf8;
+  --green:#156b52;
+  --dark:#0b4937;
+  --line:#d8ddd6;
+  --gold:#e5b458
+}
+/* ---------- Base and typography ---------- */
+* {
+  box-sizing:border-box
+}
+html {
+  scroll-behavior:smooth
+}
+body {
+  margin:0;
+  color:var(--ink);
+  background:var(--paper);
+  font:16px/1.65 Inter,
+  ui-sans-serif,
+  system-ui,
+  -apple-system,
+  "Segoe UI",
+  sans-serif
+}
+a {
+  color:inherit
+}
+/* ---------- Navigation ---------- */
+.nav {
+  position:sticky;
+  top:0;
+  z-index:5;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:2rem;
+  padding:1rem clamp(1.25rem,
+  5vw,
+  5rem);
+  background:#f5f2eaf2;
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(12px)
+}
+.brand {
+  font-weight:850;
+  letter-spacing:-.025em;
+  text-decoration:none
+}
+.nav nav {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.4rem 1.25rem
+}
+.nav nav a {
+  color:var(--muted);
+  font-size:.92rem;
+  text-decoration:none
+}
+.nav nav a:hover,
+.nav nav .active {
+  color:var(--dark)
+}
+.nav nav .active {
+  font-weight:750
+}
+/* ---------- Page layout ---------- */
+main,
+footer {
+  width:min(1120px,
+  calc(100% - 2.5rem));
+  margin:auto
+}
+/* ---------- Hero ---------- */
+.hero {
+  min-height:68vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:6rem 0;
+  border-bottom:1px solid var(--line)
+}
+.hero.short {
+  min-height:auto;
+  padding:5rem 0 4rem
+}
+.hero h1 {
+  max-width:960px;
+  margin:.35rem 0 1.5rem;
+  font:500 clamp(3rem,
+  8vw,
+  6.7rem)/.97 Georgia,
+  serif;
+  letter-spacing:-.055em
+}
+.hero.short h1 {
+  font-size:clamp(3rem,
+  7vw,
+  5.6rem)
+}
+.lead {
+  max-width:780px;
+  margin:0;
+  color:#46524d;
+  font-size:clamp(1.08rem,
+  2vw,
+  1.35rem)
+}
+.kicker {
+  margin:0;
+  color:var(--green);
+  font-size:.76rem;
+  font-weight:850;
+  letter-spacing:.15em;
+  text-transform:uppercase
+}
+.actions {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.75rem;
+  margin-top:1.7rem
+}
+.button {
+  display:inline-block;
+  width:max-content;
+  padding:.7rem 1.2rem;
+  color:var(--green);
+  background:transparent;
+  border:1px solid var(--green);
+  border-radius:999px;
+  font:inherit;
+  font-weight:750;
+  text-decoration:none;
+  cursor:pointer
+}
+.button.fill {
+  color:white;
+  background:var(--green)
+}
+.button.fill:hover {
+  background:var(--dark)
+}
+/* ---------- Content sections ---------- */
+.section {
+  padding:5rem 0;
+  border-bottom:1px solid var(--line)
+}
+.section h2,
+.cta h2 {
+  margin:.35rem 0 2rem;
+  font:500 clamp(2rem,
+  4vw,
+  3.3rem)/1.06 Georgia,
+  serif;
+  letter-spacing:-.035em
+}
+.split {
+  display:grid;
+  grid-template-columns:minmax(240px,
+  .8fr) 1.2fr;
+  gap:clamp(2rem,
+  7vw,
+  7rem)
+}
+.split p:first-child {
+  margin-top:0
+}
+.experience-section .meta {
+  margin:0.25rem 0
+}
+.resume-list {
+  margin:0;
+  padding-left:1.25rem
+}
+.resume-list li {
+  margin-bottom:0.85rem;
+  padding-left:0.35rem
+}
+.resume-list li::marker {
+  color:var(--green)
+}
+/* ---------- Projects and cards ---------- */
+.project-grid {
+  display:grid;
+  grid-template-columns:repeat(2,
+  1fr);
+  gap:1rem
+}
+.card,
+.skill-grid article,
+.composer,
+.entry,
+.empty {
+  padding:1.6rem;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:18px
+}
+.card.featured {
+  grid-column:span 2;
+  background:var(--dark);
+  color:white
+}
+.card h3,
+.skill-grid h3,
+.entry h3,
+.empty h3 {
+  margin:.15rem 0 .65rem;
+  font-size:1.18rem
+}
+.card p,
+.skill-grid p,
+.entry p,
+.empty p {
+  margin:0;
+  color:#4e5954
+}
+.card.featured p {
+  color:#dbe7e1
+}
+.meta,
+time {
+  color:var(--muted);
+  font-size:.87rem
+}
+/* ---------- Skills ---------- */
+.skill-grid {
+  display:grid;
+  grid-template-columns:repeat(4,
+  1fr);
+  gap:1rem
+}
+/* ---------- Contact callout ---------- */
+.cta {
+  margin:5rem auto;
+  padding:4rem clamp(1.5rem,
+  5vw,
+  4rem);
+  color:white;
+  background:var(--dark);
+  border-radius:24px
+}
+.cta .kicker {
+  color:#9ad4bd
+}
+.cta .button {
+  border-color:white
+}
+.cta h2 {
+  max-width:650px
+}
+/* ---------- Footer ---------- */
+footer {
+  padding:2rem 0 3rem;
+  color:var(--muted);
+  font-size:.9rem
+}
+footer a {
+  color:var(--green)
+}
+/* ---------- Life and Progress journal ---------- */
+.journal-layout {
+  display:grid;
+  grid-template-columns:340px 1fr;
+  gap:clamp(2rem,
+  6vw,
+  5rem);
+  align-items:start
+}
+.composer {
+  position:sticky;
+  top:5.5rem
+}
+.composer h2,
+.journal h2 {
+  margin:.3rem 0 1rem;
+  font-size:2rem
+}
+.note {
+  color:var(--muted);
+  font-size:.88rem
+}
+/* ---------- Forms ---------- */
+form {
+  display:grid;
+  gap:.45rem
+}
+label {
+  font-size:.84rem;
+  font-weight:750
+}
+input,
+select,
+textarea {
+  width:100%;
+  margin-bottom:.5rem;
+  padding:.72rem .8rem;
+  color:var(--ink);
+  background:white;
+  border:1px solid #b9c4bd;
+  border-radius:9px;
+  font:inherit
+}
+textarea {
+  resize:vertical
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline:3px solid #156b5230;
+  border-color:var(--green)
+}
+/* ---------- Journal entries ---------- */
+.journal-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:1rem;
+  margin-bottom:1.25rem
+}
+.journal-head h2 {
+  margin-bottom:0
+}
+.filter {
+  min-width:155px
+}
+.filter select {
+  display:block;
+  margin:.25rem 0 0
+}
+.entries {
+  display:grid;
+  gap:1rem
+}
+.entry-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:1rem;
+  margin-bottom:1rem
+}
+.tag {
+  padding:.22rem .6rem;
+  color:var(--dark);
+  background:#e1eee8;
+  border-radius:999px;
+  font-size:.76rem;
+  font-weight:750
+}
+.entry-actions {
+  display:flex;
+  gap:1rem;
+  margin-top:1.25rem
+}
+.entry-actions button {
+  padding:0;
+  color:var(--green);
+  background:none;
+  border:0;
+  font:inherit;
+  font-size:.84rem;
+  font-weight:750;
+  cursor:pointer
+}
+.entry-actions button:last-child {
+  color:#9c3e34
+}
+/* ---------- Responsive layout ---------- */
+@media (max-width: 800px) {
+  .nav {
+    position:static;
+    display:block
+  }
+  .nav nav {
+    margin-top:.7rem
+  }
+  .hero {
+    min-height:auto;
+    padding:4rem 0
+  }
+  .split,
+  .project-grid,
+  .skill-grid,
+  .journal-layout {
+    grid-template-columns:1fr
+  }
+  .card.featured {
+    grid-column:auto
+  }
+  .composer {
+    position:static
+  }
+  .journal-head {
+    align-items:start
+  }
+}
+/* ---------- Accessibility ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior:auto
+  }
+}
